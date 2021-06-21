@@ -1,0 +1,210 @@
+CONTRASEÑAS Y MÁS
+https://localhost:44315/api/FTP/
+ftp.suplementosgymmexico.mx
+ftpejemplo@suplementosgymmexico.mx
+Arkana.0$%
+Horbek.0$%
+KidCarlo.0$%
+CarloMagno.0$%
+DramaTotal.0$%
+
+201.149.67.154,1671
+192.168.10.50\LUMOSYSDESA17
+192.168.10.50
+
+10.1.102.6
+10.1.102.2\LumoSysProd17
+Holamundo.0$
+
+
+jjaimes
+Bvh26cx!
+
+HT
+Pass: Lumo.2021
+Pass: Abril369
+
+"dbIntegracion": "Server=10.1.102.6;Database=dbIntegracion;user id=sa;password=D3s4rr0ll0+"
+
+cHl2dEcwdVJ6aDBjK0xtMGo5L2Fadz09
+
+10.1.102.6
+usuario: sa
+pass: D3s4rr0ll0+
+
+https://localhost:44315/api/FTP/pweb@moriahtmp.com/ftp.dmregulacion.com/X=-STET6f45_
+
+\\10.1.102.6\AsistenciasExcel\MiPrimerEjemploconelFer.txt
+\\10.1.102.6\AsistenciasExcel\Juego.txt
+
+Command: Switch C:\LUMOSys\slnLumoSys to http://201.149.67.154:18080/svn/AppLumo/branches/slnLumoSys/version-1.1, Revision HEAD  
+
+/branches/slnLumoSys/version-1.1
+
+de el esquema de lumosys
+-tablas No seleccionar las STG y sysdiagrams
+-vistas NO seleccionar las que inician con API
+
+de el esquema de FSL solo seleccionar las siguientes vistas
+ViewAnexoEquipamientoFullService
+ViewAnexoFullService
+ViewCatAsignacionUnidad
+ViewCatTipoCondicionUnidads
+ViewCatTipoContratacionSeguro
+ViewCatTipoEntregaUnidads
+ViewCatTipoLocacion
+ViewCatTipoPlaca
+ViewCatValorOperacion
+ViewHistAnexoFullService
+ViewPagoAnexoFullService
+
+de el esquema de GFl solo seleccionar las siguientes vistas
+ViewCargaFlotasError
+ViewCargasFlota
+ViewContratoGestionFlota
+
+
+url pweb@moriahtmp.com
+usuario ftp.dmregulacion.com
+contraseña X=-STET6f45_
+
+JARJ901125CB9
+
+162.214.111.34
+rodrigo_fantomas
+
+dbLumoSysEntities
+
+soniadejesus@lumofc.com
+-7MdXtyC_zz_dCMLHW-x
+
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+FK_ContratoFullService_ContratoInterno
+SolicitudFullService
+
+⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄⛄
+
+
+{isOk: true, URL: "https://localhost:44315/api/SeguridadCatAplicacion", Method: "post", request: {…}, isRequestJSON: true, …}
+
+
+{"Sincronizacion":{"Calendario":{"Nombre":"","FechaInicio":"","FechaFin":"","HoraInicio":"","HoraFin":"","Frecuencia":""},"Origen":{ "Tipo":"Base de Datos",'BaseDatos':{'Proveedor':'System.Data.SqlClient','Motor':'SqlServer','SeguridadIntegrada':false,'Cadena':'data source=192.168.10.50\LumoSysDesa17;initial catalog=dbLumoSysDesa;user id=jhernandez;password=Fondos182;MultipleActiveResultSets=True;','Instruccion':'select * from marcas'}},"Destino":[{ "Tipo":"API","API":{"isOk":true,"URL":"https://localhost:44315/api/SeguridadBitacora","Method":"post","request":{"idBitacora":0,"descripcion":"","fecha":"2020-12-11T12:58"},"isRequestJSON":true,"requestDetail":[{"name":"idBitacora","detectedType":"number","testValue":0,"isStatic":true},{"name":"descripcion","detectedType":"string","testValue":"","isStatic":true},{"name":"fecha","detectedType":"string","testValue":"2020-12-11T12:58","isStatic":true}],"params":[],"headers":[{"name":"Content-Type","testValue":"application/json","detectedType":"string","isStatic":true}],"error":"","statusCode":"","response":{"idBitacora":243,"descripcion":"","fecha":"2020-12-11T12:58:00"},"isResponseJSON":true,"responseDetail":[{"name":"idBitacora","detectedType":"number","testValue":243},{"name":"descripcion","detectedType":"string","testValue":""},{"name":"fecha","detectedType":"string","testValue":"2020-12-11T12:58:00"}]}}]}}
+
+http://192.168.10.50:18080/svn/AppLumo/trunk/slnCepademDigital/Api.CepademDigitalLumoSys
+
+http://192.168.10.50:18080/svn/AppLumo/trunk/Middleware/slnMiddleware/FSL
+http://201.149.67.154:18080/svn/AppLumo/trunk/Middleware/slnMiddleware/FSL
+
+use dbLumoSysDesa
+IF (NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'Fsl')) 
+BEGIN
+    EXEC ('CREATE SCHEMA [Fsl] AUTHORIZATION [dbo]')
+END
+
+
+use dbLumoSysDesa
+ALTER SCHEMA fsl TRANSFER dbo.ViewCatTipoPlaca;
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.InMemory
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.VisualStudio.Web.CodeGeneration.Design Microsoft.EntityFrameworkCore.Tools Microsoft.EntityframeworkCore.Sqlite
+
+
+SELECT DISTINCT SUBSTRING(B.name,0,4) PREFIJO, a.name
+FROM dbLumoSysDesa.sys.objects A inner join dbLumoSysDesa.sys.all_columns B on A.object_id = B.object_id
+WHERE type_desc LIKE 'USER_TABLE'
+AND A.name not like 'STG%'
+AND SUBSTRING(B.name,0,4) like ('MC%')
+ORDER BY 1
+
+                            <div class="panel panel-c-warning panel-filled">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a role="button" data-toggle="collapse" href="#pnlRecepcionSolicitud" aria-expanded="false">
+                                            <i class="fab fa-wpforms"></i> Recepción
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse" id="pnlRecepcion">
+                                    <div class="panel-body">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-c-warning panel-filled">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <i class="fab fa-wpforms"></i> Recepción
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+        
+
+    //"dbLumoSys": "Server=10.1.102.6;Database=dbLumoSysDesa;user id=sa;password=D3s4rr0ll0+"
+    //"dbLumoSys": "Server=201.149.67.154,1671;Database=dbLumoSysDesa;user id=jjaimes;password=CarloMagno.0$%"
+    "dbLumoSys": "Server=localhost;Database=dbLumoSys;user id=sa;password=CarloMagno.0$%"
+
+
+http://lumokpi.com:1680/
+usuario: jjaimes
+contrasña: 12345678
+
+FANAYA, FBLANNO, RMEJIA, MMONROY
+contraseña:12345678
+
+"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikplc3VzaHAuMTk4OXNAZ21haWwuY29tIiwibWlWYWxvciI6IkxvIHF1ZSB5byBxdWllcmEiLCJqdGkiOiJhNDM2NmEwOS00N2JlLTQxZGQtYmE5Zi03NGMxMmU0ZTNjNTQiLCJleHAiOjE2MTk3MzI5NTJ9.0gqGXSbqMsRgz10kmgjVRqYXrhQCN7uLZEeMO9DlXWM"
+},
+
+
+headers: { "Authorization": "Bearer " + tokenfsl},
+
+
+error: function (jqXHR) {
+    if (jqXHR.status == "401") {
+        fjsMensajeGrowl('No se pudo establecer conexión a la base de datos, inicia sesión nuevamente', 'Alerta', 'danger');
+    }else{
+        fjsMensajeGrowl('No se pudo establecer conexión a la base de datos', 'Alerta', 'danger');
+    }
+},
+
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
+public void postmetodo()
+        {
+            WebRequest webRequest = WebRequest.Create("https://localhost:44345/api/Token");
+            webRequest.Method = "post";
+            webRequest.ContentType = "application/json;charset=UTF-8";
+
+ 
+
+            using (var stre = new StreamWriter(webRequest.GetRequestStream()))
+            {
+                //string json = "{\"error\":\"api\",\"numero\": 9999,\"controlador\": \"julio\"}";
+                string jsond = "{\"USER\":\"jjaimes\",\"PASS\": \"12345678\"}";
+
+ 
+
+                stre.Write(jsond);
+                stre.Flush();
+                stre.Close();
+
+ 
+
+            }
+
+ 
+
+            WebResponse webResponse = webRequest.GetResponse();
+            using (var strer = new StreamReader(webResponse.GetResponseStream()))
+            {
+                string result = strer.ReadToEnd().Trim();
+            }
+        }
+
