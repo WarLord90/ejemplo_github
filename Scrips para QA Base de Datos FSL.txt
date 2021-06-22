@@ -88,17 +88,19 @@ select top 100 * from VST_FACTURAS_DETALLES where FCD_FCT_ID=753280
 select * from FACTURAS_PAGOS where FPA_FCD_ID=202945
 
 use dbLumoSysDesa	
-select c.IdContratoFullservice, a.IdAnexoFullService, f.FCT_TES_ID, fp.FPA_SALDO_APLICADO,f.FCT_TLN_ID
+select c.IdContratoFullservice, a.IdAnexoFullService,a.CompraDetalleDescripcion,a.NumeroUnidades,
+f.SCO_SERIE + CONVERT(VARCHAR(10),f.FCT_FOLIO) AS FOLIO,f.FCT_UUID, f.FCT_TES_ID, fp.FPA_SALDO_APLICADO,f.FCT_TLN_ID,
+p.NumeroConsecutivo,p.Dias,p.FechaPeriodo,p.FechaVencimiento,p.MontoSubtotal,p.MontoIva,p.MontoTotal,p.TipoMensualidadArrendamientoDescripcion
 from fsl.ContratoFullService c
 inner join fsl.SolicitudFullService s on c.IdContratoFullService=s.IdContratoFullservice
-inner join fsl.AnexoFullService a on s.IdSolicitudFullService=a.IdSolicitudFullService
-inner join fsl.PagoAnexoFullService p on a.IdAnexoFullService=p.IdAnexoFullService
+inner join fsl.ViewAnexoFullService a on s.IdSolicitudFullService=a.IdSolicitudFullService
+inner join fsl.ViewPagoAnexoFullService p on a.IdAnexoFullService=p.IdAnexoFullService
 inner join FACTURAS_PAGOS fp on p.IdPagoAnexoFullService=fp.FPA_REGISTRO_A_PAGAR
 inner join FACTURAS_DETALLES fd on fp.FPA_FCD_ID=fd.FCD_ID 
-inner join FACTURAS f on fd.FCD_FCT_ID=f.FCT_ID
+inner join VST_FACTURAS f on fd.FCD_FCT_ID=f.FCT_ID
 inner join PAGOS_FACTURAS pf on f.FCT_ID=pf.PFA_FCT_ID
 inner join PAGOS pg on pf.PFA_PGS_ID=pg.PGS_ID
-where c.IdContratoFullservice=29 and f.FCT_TES_ID=66 and f.FCT_TLN_ID=6
+where c.IdContratoFullservice=29 and f.FCT_TES_ID=66 and p.IdCatTipoEstatus in(57,69) and f.FCT_TLN_ID=6
 
 
 
