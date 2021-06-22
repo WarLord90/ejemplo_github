@@ -62,3 +62,20 @@ INSERT [dbo].[MODULOS] ([MOD_ID], [MOD_DESCRIPCION], [MOD_ROUTE], [MOD_MOD_ID], 
 
 
 LIMPIAR DROPDOWNS GESTORÍA 
+
+
+use dblumosysdesa
+
+select top 10 * from VST_FACTURAS order by fct_id desc
+
+select top 100 * 
+from VST_PAGOS_FACTURAS vpf 
+inner join vst_facturas vf on vpf.PFA_FCT_ID = vf.FCT_ID
+where vf.FCT_TLN_ID = 6
+order by vpf.PFA_ID desc
+
+select * from fsl.PagoAnexoFullService
+
+select top 100 * from VST_FACTURAS where FCT_TLN_ID=6 and FCT_ID=753280
+
+select top 100 * from VST_FACTURAS_DETALLES where FCD_FCT_ID=753280
