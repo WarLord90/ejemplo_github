@@ -208,3 +208,10 @@ public void postmetodo()
             }
         }
 
+use dbLumoSysDesa
+
+select * from fsl.AnexoFullService
+select * from fsl.ViewReporteArrendamiento
+
+SELECT DISTINCT compradetalleserie
+FROM FSL.ViewReporteArrendamiento where idcontratofullservice = 29
