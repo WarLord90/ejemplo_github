@@ -34,6 +34,9 @@ GO
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_TSS_ID) values (321,'Operaciones','/GestionFlota/Index',320,1)
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_TSS_ID) values (323,'Carga Flotas','/GestionFlota/Cargasflotas',320,1)
 
+
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (331,'Reporte Gestión Flotas','/FullServiceLease/ReporteGestionFlotas',315,328,1)
+
 --insert into TIPOS_ESTATUS values(368,'PENDIENTE',87,NULL,1)
 --insert into TIPOS_ESTATUS values(369,'PROCESADO',87,NULL,1)
 --INSERT INTO ROLES VALUES(72,'CLIENTES FSL')
