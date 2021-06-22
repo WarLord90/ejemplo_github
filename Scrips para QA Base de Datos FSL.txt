@@ -74,8 +74,30 @@ inner join vst_facturas vf on vpf.PFA_FCT_ID = vf.FCT_ID
 where vf.FCT_TLN_ID = 6
 order by vpf.PFA_ID desc
 
-select * from fsl.PagoAnexoFullService
+select * from fsl.ContratoFullService where IdContratoFullService=29
+select * from fsl.SolicitudFullService where IdSolicitudFullService=12
+select * from fsl.ViewAnexoFullService where IdAnexoFullService=2
+--select * from fsl.ViewPagoAnexoFullService
+select * from fsl.PagoAnexoFullService where MontoTotal = 19359.1697
+
+select * from PAGOS where pgs_id=23769
+select * from PAGOS_FACTURAS where PFA_FCT_ID=753280
 
 select top 100 * from VST_FACTURAS where FCT_TLN_ID=6 and FCT_ID=753280
-
 select top 100 * from VST_FACTURAS_DETALLES where FCD_FCT_ID=753280
+select * from FACTURAS_PAGOS where FPA_FCD_ID=202945
+
+
+
+
+use dblumosysDesa
+
+SELECT TOP(1) FCT_TES_ID,FCT_PAGINA_PDF,FCT_PAGINA_XML,FCT_UUID,* FROM FACTURAS 
+
+--VIGENTE 66
+--CANCELADO 67
+
+
+SELECT * FROM PAGOS_FACTURAS
+
+SELECT * FROM PAGOS
