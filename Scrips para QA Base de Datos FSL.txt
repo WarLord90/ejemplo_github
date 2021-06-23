@@ -141,3 +141,18 @@ select * from PAGOS_FACTURAS where PFA_FCT_ID=753280
 select top 100 * from VST_FACTURAS where FCT_TLN_ID=6 and FCT_ID=753280
 select top 100 * from VST_FACTURAS_DETALLES where FCD_FCT_ID=753280
 select * from FACTURAS_PAGOS where FPA_FCD_ID=202945
+
+use dblumosysdesa
+--select * from fsl.PagoAnexoFullService
+select * from FACTURAS_PAGOS where FPA_FCD_ID=204989
+--insert into FACTURAS_PAGOS values(204989,66465,5237.4000,1203,Getdate())
+
+--select * from VST_FACTURAS where FCT_TLN_ID=7 order by fct_id desc
+select * from VST_FACTURAS_DETALLES where FCD_FCT_ID=755311
+
+--select * from gfl.ViewReporteCargasFlotasGestorias 
+select * from gfl.ViewReporteCargasFlotasServicios where FolioServicio like 'ASI066465'
+--5,237.4000
+select * from gfl.PagosGestionFlotas
+select * from TIPOS_ESTATUS where tes_id=56
+--insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())
