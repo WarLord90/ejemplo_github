@@ -156,3 +156,46 @@ select * from gfl.ViewReporteCargasFlotasServicios where FolioServicio like 'ASI
 select * from gfl.PagosGestionFlotas
 select * from TIPOS_ESTATUS where tes_id=56
 --insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())
+
+
+use dblumosysdesa
+--select * from fsl.PagoAnexoFullService
+select * from FACTURAS_PAGOS where FPA_FCD_ID=204989
+--insert into FACTURAS_PAGOS values(204989,66465,5237.4000,1203,Getdate())
+select top 100 * from VST_FACTURAS where FCT_ID=755311
+--select * from VST_FACTURAS where FCT_TLN_ID=7 order by fct_id desc
+select * from VST_FACTURAS_DETALLES where FCD_FCT_ID=755311
+
+--select * from gfl.ViewReporteCargasFlotasGestorias 
+select * from gfl.ViewReporteCargasFlotasServicios where FolioServicio like 'ASI066465'
+--5,237.4000
+select * from gfl.PagosGestionFlotas
+--update FACTURAS_PAGOS set FPA_REGISTRO_A_PAGAR=98764 where FPA_ID=23918
+--update facturas set FCT_TES_ID=66 where fct_id=755311
+--insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())
+
+use dblumosysdesa
+
+select vcf.NumeroSerie, vcf.NombreServicio,vcf.PrecioServicio,f.FCT_ID
+from gfl.ViewReporteCargasFlotasServicios vcf
+inner join gfl.PagosGestionFlotas p on vcf.IdServicioDetalle=p.IdMantenimiento
+inner join facturas_pagos fp on p.IdMantenimiento=fp.FPA_REGISTRO_A_PAGAR
+inner join FACTURAS_DETALLES fd on fp.FPA_FCD_ID=fd.FCD_ID
+inner join VST_FACTURAS AS f ON fd.FCD_FCT_ID = f.FCT_ID 
+INNER JOIN dbo.PAGOS_FACTURAS AS pf ON f.FCT_ID = pf.PFA_FCT_ID 
+INNER JOIN PAGOS AS pg ON pf.PFA_PGS_ID = pg.PGS_ID
+where vcf.NumeroSerie='3C6SRBDG0KG541766' --AND (f.FCT_TES_ID = 66) AND (pg.IdCatTipoEstatus IN (56, 69)) AND (f.FCT_TLN_ID = 7)
+
+
+
+select * from gfl.ContratoGestionFlotas where IdContratoGestionFlotas=7
+select * from gfl.CargasFlotas where IdCargaFlota=375
+select VHC_ID_CARGA,VHC_NO_SERIE from VEHICULOS where VHC_NO_SERIE like '3C6SRBDG0KG541766'
+select * from GFL.ViewReporteCargasFlotasServicios where NumeroSerie like '3C6SRBDG0KG541766'
+select * from gfl.PagosGestionFlotas
+select * from PAGOS where pgs_id=23769
+
+select * from VST_PAGOS 
+select * from PAGOS_FACTURAS where PFA_FCT_ID=755311 order by PFA_FCT_ID desc
+
+--4515.00
