@@ -45,7 +45,7 @@ de el esquema de lumosys
 -tablas No seleccionar las STG y sysdiagrams
 -vistas NO seleccionar las que inician con API
 
-de el esquema de FSL solo seleccionar las siguientes vistas
+FSL 
 ViewAnexoEquipamientoFullService
 ViewAnexoFullService
 ViewCatAsignacionUnidad
@@ -58,7 +58,7 @@ ViewCatValorOperacion
 ViewHistAnexoFullService
 ViewPagoAnexoFullService
 
-de el esquema de GFl solo seleccionar las siguientes vistas
+GFl 
 ViewCargaFlotasError
 ViewCargasFlota
 ViewContratoGestionFlota
