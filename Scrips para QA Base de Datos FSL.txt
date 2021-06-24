@@ -199,3 +199,21 @@ select * from VST_PAGOS
 select * from PAGOS_FACTURAS where PFA_FCT_ID=755311 order by PFA_FCT_ID desc
 
 --4515.00
+
+
+
+select cf.IdContrato,c.ContratoInterno,c.IdCatCliente,c.ClienteSiglas,c.IdCatEmpresa,c.EmpresaDescripcion,c.LineaCreditoAutorizada,c.CapacidadPago,
+v.VHC_ID_CARGA,v.VHC_DESCRIPCION,
+f.SCO_SERIE + CONVERT(VARCHAR(10), f.FCT_FOLIO) AS FOLIO,f.FCT_UUID,fp.FPA_SALDO_APLICADO,f.FCT_TLN_ID,
+s.SER_NO_SERIE,s.SER_SUBTOTAL,s.SER_IVA,s.SER_TOTAL
+from dbLumoSfleet.dbo.Servicios s
+inner join VEHICULOS v on s.SER_NO_SERIE=v.VHC_NO_SERIE
+inner join gfl.CargasFlotas cf on v.VHC_ID_CARGA=cf.IdCargaFlota
+inner join gfl.ViewContratoGestionFlotas c on cf.IdContrato=c.IdContratoGestionFlotas
+inner join gfl.PagosGestionFlotas p on s.SER_ID_ID=p.IdMantenimiento
+inner join facturas_pagos fp on p.IdMantenimiento=fp.FPA_REGISTRO_A_PAGAR
+inner join FACTURAS_DETALLES fd on fp.FPA_FCD_ID=fd.FCD_ID
+inner join VST_FACTURAS AS f ON fd.FCD_FCT_ID = f.FCT_ID 
+INNER JOIN dbo.PAGOS_FACTURAS AS pf ON f.FCT_ID = pf.PFA_FCT_ID 
+INNER JOIN PAGOS AS pg ON pf.PFA_PGS_ID = pg.PGS_ID
+where s.SER_NO_SERIE='3C6SRBDG0KG541766' AND (f.FCT_TES_ID = 66) AND (p.IdCatTipoEstatus IN (57, 69)) AND (f.FCT_TLN_ID = 7)
