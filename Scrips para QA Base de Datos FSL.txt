@@ -37,6 +37,9 @@ GO
 
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (331,'Reporte Gestión Flotas','/FullServiceLease/ReporteGestionFlotas',315,328,1)
 
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (332,'Reporte Cobro Unidad FSL','/FullServiceLease/ReporteCobroUnidadFSL',315,328,1)
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (333,'Reporte Cobro Unidad GFl','/FullServiceLease/ReporteCobroUnidadGFl',315,328,1)
+
 --insert into TIPOS_ESTATUS values(368,'PENDIENTE',87,NULL,1)
 --insert into TIPOS_ESTATUS values(369,'PROCESADO',87,NULL,1)
 --INSERT INTO ROLES VALUES(72,'CLIENTES FSL')
@@ -217,3 +220,21 @@ inner join VST_FACTURAS AS f ON fd.FCD_FCT_ID = f.FCT_ID
 INNER JOIN dbo.PAGOS_FACTURAS AS pf ON f.FCT_ID = pf.PFA_FCT_ID 
 INNER JOIN PAGOS AS pg ON pf.PFA_PGS_ID = pg.PGS_ID
 where s.SER_NO_SERIE='3C6SRBDG0KG541766' AND (f.FCT_TES_ID = 66) AND (p.IdCatTipoEstatus IN (57, 69)) AND (f.FCT_TLN_ID = 7)
+
+
+
+use dblumosysdesa
+--select * from fsl.PagoAnexoFullService
+select * from FACTURAS_PAGOS where FPA_FCD_ID=204989
+--insert into FACTURAS_PAGOS values(204989,66465,5237.4000,1203,Getdate())
+select top 100 * from VST_FACTURAS where FCT_ID=755311
+--select * from VST_FACTURAS where FCT_TLN_ID=7 order by fct_id desc
+select * from VST_FACTURAS_DETALLES where FCD_FCT_ID=755311
+
+--select * from gfl.ViewReporteCargasFlotasGestorias 
+select * from gfl.ViewReporteCargasFlotasServicios where FolioServicio like 'ASI066465'
+--5,237.4000
+select * from gfl.PagosGestionFlotas
+--update FACTURAS_PAGOS set FPA_REGISTRO_A_PAGAR=66465 where FPA_ID=23918
+--update facturas set FCT_TES_ID=66 where fct_id=755311
+--insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())
