@@ -5,7 +5,14 @@ ftpejemplo@suplementosgymmexico.mx
 Arkana.0$%
 Horbek.0$%
 KidCarlo.0$%
+
+localhost 
 CarloMagno.0$%
+
+Desa 
+DramaTotal.0$%
+
+Prod
 DramaTotal.0$%
 
 201.149.67.154,1671

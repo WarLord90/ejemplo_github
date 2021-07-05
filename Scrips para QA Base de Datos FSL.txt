@@ -35,10 +35,15 @@ GO
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_TSS_ID) values (323,'Carga Flotas','/GestionFlota/Cargasflotas',320,1)
 
 
---insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (331,'Reporte Gestión Flotas','/FullServiceLease/ReporteGestionFlotas',315,328,1)
 
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_MOD_ID,MOD_TSS_ID) values (328,'Reportes FSL',315,1)
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (329,'Reporte Arrendamiento Detalle','/FullServiceLease/ReporteArrendamientoDetalle',315,328,1)
+--insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (331,'Reporte Gestión Flotas','/FullServiceLease/ReporteGestionFlotas',315,328,1)
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (332,'Reporte Cobro Unidad FSL','/FullServiceLease/ReporteCobroUnidadFSL',315,328,1)
 --insert into MODULOS(MOD_ID,MOD_DESCRIPCION,MOD_ROUTE,MOD_MOD_ID,MOD_MOD_MOD_ID,MOD_TSS_ID) values (333,'Reporte Cobro Unidad GFl','/FullServiceLease/ReporteCobroUnidadGFl',315,328,1)
+
+
+
 
 --insert into TIPOS_ESTATUS values(368,'PENDIENTE',87,NULL,1)
 --insert into TIPOS_ESTATUS values(369,'PROCESADO',87,NULL,1)
@@ -111,6 +116,7 @@ where c.IdContratoFullservice=29 and f.FCT_TES_ID=66 and p.IdCatTipoEstatus in(5
 use dblumosysDesa
 
 SELECT TOP(1) FCT_TES_ID,FCT_PAGINA_PDF,FCT_PAGINA_XML,FCT_UUID,* FROM FACTURAS 
+update FACTURAS set FCT_TES_ID=66, FCT_PAGINA_PDF=1,FCT_PAGINA_XML=1, FCT_UUID='fdsahjhkjhdksfa' where fct_id=755314
 
 --VIGENTE 66
 --CANCELADO 67
@@ -237,4 +243,11 @@ select * from gfl.ViewReporteCargasFlotasServicios where FolioServicio like 'ASI
 select * from gfl.PagosGestionFlotas
 --update FACTURAS_PAGOS set FPA_REGISTRO_A_PAGAR=66465 where FPA_ID=23918
 --update facturas set FCT_TES_ID=66 where fct_id=755311
---insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())
+--insert into gfl.PagosGestionFlotas values(204989,66465,57,5237.4000,1203,Getdate())}
+
+
+
+select * from CARGAS_PAGOS where CPA_ID=11903
+select * from CARGAS_PAGOS_DETALLES where CPD_CPA_ID=11903
+select * from VST_pagos where PGS_CPA_ID=11903
+select * from PAGOS_DETALLES where PGD_PGS_ID=34797
